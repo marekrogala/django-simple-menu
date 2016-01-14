@@ -209,7 +209,7 @@ class MenuItem(object):
             if sys.version_info > (3, 0):
                 self.slug = slugify(self.title)
             else:
-                self.slug = slugify(unicode(self.title))
+                self.slug = slugify(unicode(self.title, 'utf-8'))
 
         # evaluate children
         if callable(self.children):
